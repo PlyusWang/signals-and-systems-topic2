@@ -1,0 +1,41 @@
+{
+  "cwt": [],
+  "gui_switch": [
+    {
+      "duration_s": 60,
+      "sample_rate_hz": 16000,
+      "target": "fft",
+      "switch_to_result_s": 1.8142,
+      "event_loop_response_s": 0.0314,
+      "cancel_requested": true,
+      "longest_cwt_block_s": 1.6304
+    },
+    {
+      "duration_s": 60,
+      "sample_rate_hz": 16000,
+      "target": "stft",
+      "switch_to_result_s": 1.7716,
+      "event_loop_response_s": 0.0358,
+      "cancel_requested": true,
+      "longest_cwt_block_s": 1.6911
+    },
+    {
+      "duration_s": 180,
+      "sample_rate_hz": 16000,
+      "target": "fft",
+      "switch_to_result_s": 2.0645,
+      "event_loop_response_s": 0.033,
+      "cancel_requested": true,
+      "longest_cwt_block_s": 1.6383
+    },
+    {
+      "duration_s": 180,
+      "sample_rate_hz": 16000,
+      "target": "stft",
+      "switch_to_result_s": 1.5695,
+      "event_loop_response_s": 0.0321,
+      "cancel_requested": true,
+      "longest_cwt_block_s": 1.491
+    }
+  ]
+}

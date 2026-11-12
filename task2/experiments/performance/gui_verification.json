@@ -1,0 +1,25 @@
+{
+  "passed": true,
+  "frozen": false,
+  "local_mouse_selection": true,
+  "pan": true,
+  "zoom": true,
+  "fixed_overview": true,
+  "selected_samples": [
+    4096,
+    7168
+  ],
+  "analyzed_views": [
+    "fft",
+    "stft",
+    "cwt",
+    "correlation"
+  ],
+  "playback_state_playing": true,
+  "wav_export": true,
+  "png_export": true,
+  "live_playback_cursor_seconds": 0.32,
+  "stop_retains_cursor": true,
+  "playback_does_not_reanalyze": true,
+  "svg_vector_paths_without_embedded_image": true
+}

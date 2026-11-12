@@ -1,0 +1,11 @@
+numpy>=2.0,<3
+scipy>=1.14,<2
+PyWavelets>=1.7,<2
+soundfile>=0.13,<1
+matplotlib>=3.9,<4
+PySide6==6.11.1
+pyqtgraph>=0.13.7,<1
+pytest>=8,<9
+psutil>=6,<8
+python-pptx>=1.0,<2
+pywin32>=306; platform_system == "Windows"

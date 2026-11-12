@@ -1,0 +1,207 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[a4paper,left=25mm,right=25mm,top=25mm,bottom=23mm]{geometry}
+\usepackage{fontspec}
+\usepackage{xeCJK}
+\setmainfont{TeX Gyre Termes}
+\setCJKmainfont[AutoFakeBold=2]{SimSun}
+\setCJKsansfont{Microsoft YaHei}
+\setCJKmonofont{SimSun}
+\usepackage{amsmath,amssymb,bm}
+\usepackage{graphicx}
+\usepackage{booktabs,array}
+\usepackage{caption}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage[backend=biber,style=numeric-comp,sorting=none,autocite=superscript]{biblatex}
+\addbibresource{references.bib}
+\DeclareCiteCommand{\supercite}[\mkbibsuperscript]
+  {\usebibmacro{cite:init}%
+   \let\multicitedelim=\supercitedelim
+   \let\multicitesubentrydelim=\supercitesubentrydelim
+   \let\multiciterangedelim=\superciterangedelim
+   \let\multicitesubentryrangedelim=\supercitesubentryrangedelim
+   \printtext{\bibopenbracket}}
+  {\usebibmacro{citeindex}%
+   \usebibmacro{cite:comp}}
+  {}
+  {\usebibmacro{cite:dump}%
+   \printtext{\bibclosebracket}}
+\hypersetup{colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{0.35em}
+\linespread{1.18}
+\emergencystretch=3em
+\titleformat{\section}{\bfseries\large\rmfamily}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\bfseries\normalsize\rmfamily}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\bfseries\normalsize\rmfamily}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.2em}{0.6em}
+\titlespacing*{\subsection}{0pt}{1em}{0.4em}
+\titlespacing*{\subsubsection}{0pt}{0.7em}{0.25em}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setminted{fontsize=\small,breaklines=true,linenos=true,frame=lines,framesep=2mm,baselinestretch=1.05}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\captionsetup{labelsep=space,font=normalsize,hypcap=false}
+\definecolor{codebg}{RGB}{245,247,247}
+\newcommand{\fig}[3]{\begin{center}\begin{minipage}{0.96\linewidth}\centering\includegraphics[width=#2\linewidth]{#1}\captionof{figure}{#3}\end{minipage}\end{center}}
+\newcommand{\labeledfig}[4]{\begin{center}\begin{minipage}{0.96\linewidth}\centering\includegraphics[width=#2\linewidth]{#1}\captionof{figure}{#3}\label{#4}\end{minipage}\end{center}}
+\newcommand{\tab}[3]{\begin{center}\begin{minipage}{0.96\linewidth}\centering\captionof{table}{#2}\label{#3}#1\end{minipage}\end{center}}
+\title{\bfseries 基于时频与小波分析的交互式信号实验平台及复杂噪声通信信号恢复研究}
+\author{成员 1\\
+成员 2\\
+成员 3\\
+成员 4}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+
+\section{研究问题与实验系统}
+本实验研究同一条声学通信波形在时域、Fourier 频域和两类时频表示中的信息差异，并考察这些差异如何帮助处理复杂噪声。实验重点是持续随机底噪、窄带干扰、突发噪声和非平稳噪声；恢复路线包括小波阈值、基于噪声观测的 PSD-Wiener 增强、互相关同步以及重复接收平均。
+
+工程包含两个共享 WAV 格式的程序。SignalScope 使用 PySide6 Widgets 和 pyqtgraph，提供波形包络、时间选区、FFT、STFT、CWT、自相关和互相关；通信实验程序生成相位连续的声学 2-FSK 帧，并保存噪声分量、组合信号、处理 WAV 及 CSV/JSON 指标。测试环境为 Python 3.12、NumPy 2.4.4、SciPy 1.17.1、PyWavelets 1.8.0 和 soundfile 0.14.0。
+
+\section{数学表示与实现}
+信号和系统的傅里叶表示为时域结构与频率成分之间提供了互补描述\supercite{oppenheim1997}。设离散信号为 $x[n]$，采样率为 $f_s$。长度为 $N$ 的离散 Fourier 变换为
+\begin{equation}
+X[k]=\sum_{n=0}^{N-1}x[n]e^{-j2\pi kn/N},\qquad f_k=\frac{k f_s}{N}.
+\end{equation}
+程序以单边 $rFFT$ 显示幅度。非 DC、非 Nyquist 分量乘以 2，并除以窗函数相干增益；频率采样间隔为 $f_s/N_{\rm FFT}$。补零只增加频谱采样点，不改变由实际观测时长和窗函数主瓣决定的频率分辨尺度。
+
+STFT 在时间位置 $m$ 使用窗函数 $w[n-mR]$：
+\begin{equation}
+X(m,\omega)=\sum_n x[n]w[n-mR]e^{-j\omega n},
+\end{equation}
+其中 $R$ 为帧移。CWT 以尺度 $a$ 调整复 Morlet 小波：
+\begin{equation}
+W_x(a,b)=\frac{1}{\sqrt{|a|}}\int x(t)\psi^*\!\left(\frac{t-b}{a}\right)\,dt.
+\end{equation}
+程序将尺度换算为 Hz 后插值到等间隔频率网格，因而图像纵轴与数据行一致；长音频概览按原采样率分块计算 CWT，再沿时间轴减少显示列数，保留原信号的分析频带。
+
+\subsection{窗口长度与相近频率}
+截取有限时长相当于将信号乘以窗函数。窗函数频谱与信号谱卷积，使有限观测产生主瓣展宽和旁瓣泄漏。FFT 频点间隔 $f_s/N_{\rm FFT}$ 决定频谱采样密度；Hann 窗主瓣零点间距约为 $4f_s/N$，由实际窗长 $N$ 决定，补零不会缩窄主瓣。STFT 的窗长同样控制时间定位与频率分辨之间的折中。
+
+本实验用间隔 80 Hz 的 1.00 kHz 与 1.08 kHz 双音，采样率 16 kHz，并比较 256、1024、4096 点观测的 FFT，以及 256 与 2048 点 STFT 窗长。16 ms 的 Hann 窗主瓣间距约 250 Hz，两个峰相互展宽；64 ms 时约 62.5 Hz，两个峰开始分开；256 ms 时约 15.6 Hz，峰值清楚分离。短 STFT 窗保留较好的时间定位，长窗提高频率分辨能力但模糊短时变化。CWT 的对数尺度提供多尺度视图；在本组稳态双音实验中，长窗 FFT 对相近频率的分离更清楚。
+
+\fig{../../task2/figures/window_resolution_comparison.pdf}{0.96}{双音信号的窗口长度比较}
+
+自相关与互相关定义为
+\begin{equation}
+r_{xx}[\ell]=\sum_n x[n]x[n-\ell],\qquad r_{xy}[\ell]=\sum_n x[n]y[n-\ell].
+\end{equation}
+实现使用 FFT 相关和 \texttt{scipy.signal.correlation\_lags}。对宽平稳离散噪声，自相关序列的 DTFT 给出功率谱密度，Welch 分段周期图可视为对相关统计的等价频域估计\supercite{papoulis2002,welch1967}。PSD-Wiener 的噪声谱只由接收前的噪声专用观测段估计。相关分析先去均值，并按输入能量归一化；正滞后表示第一个输入相对第二个输入延后。
+
+\section{交互式信号分析器}
+分析通信波形时，先在全局概览中定位待观察的时段，再从局部波形中选取分析片段。浏览窗口与分析选区独立，平移和缩放可观察邻近结构，同时保持分析片段不变。完整信号与选区的 FFT 并列显示，用于判断载波、窄带干扰及其局部变化；STFT 和 CWT 则揭示这些频率成分随时间的分布。
+
+\labeledfig{images/gui_overview.png}{0.96}{双文件波形与频谱比较}{fig:gui-overview}
+
+\begin{samepage}
+图~\ref{fig:gui-overview} 比较含噪信号与干净信号。两份 WAV 按共同时间轴显示，在同一时间区间内使用相同窗函数与 dBFS 参考计算 FFT；采样率不同时，将对比信号重采样至主信号\mbox{采样率}。时间偏移由用户指定，正值将对比信号向右移动。波形和频谱采用不同颜色标识两份信号，频谱幅度采用共同参考。
+
+\end{samepage}
+
+选取通信前导码作为模板后，完整波形的互相关峰给出其出现位置；选区互相关则显示该片段内部的延迟关系。图~\ref{fig:gui-correlation} 中，完整信号的相关峰位于 256 ms，分析选区内的对应峰位于 0 ms，两者指向同一段前导码。
+
+\labeledfig{images/gui_cwt_core.png}{0.96}{CWT 局部频率结构}{fig:gui-cwt}
+\labeledfig{images/gui_correlation_core.png}{0.96}{前导码定位与相对时延}{fig:gui-correlation}
+
+\section{通信信号与噪声模型}
+2-FSK 帧包含 32 bit 公开前导码、有效载荷和 32 bit CRC。单帧评价使用 192 byte 有效载荷，重复接收实验使用 96 byte；两类实验的接收算法均只用公开前导码互相关估计起点，再以两个载波模板的能量差判决符号，载荷仅用于 BER 和 CRC 评分。采样率为 16 kHz，码率为 1 kbit/s，载波为 1.5 kHz 和 2.5 kHz，每个码元 16 点。
+
+噪声采用
+\begin{equation}
+r[n]=s[n]+n_1[n]+n_2[n]+\cdots.
+\end{equation}
+$N1$ 是 AWGN，$N2$ 是 1777 Hz 窄带干扰，$N3$ 是局部脉冲簇，$N4$ 是带扫频成分且强度随时间变化的有色噪声。实验分别考察单类噪声，以及随机底噪与窄带、突发或\mbox{非平稳干扰}的叠加；各方法在相同组合、信噪比和随机种子下比较。每个单帧接收前增加 0.256 s 噪声专用观测段；PSD-Wiener 只从实际接收观测估计噪声功率谱，干净信号和真实噪声分量不进入接收算法。
+
+\fig{../../task2/figures/noise_waveforms.pdf}{0.96}{干净波形与四类噪声分量}
+\fig{../../task2/figures/time_frequency_clean_noisy.pdf}{0.96}{局部波形与全帧 STFT 对照}
+
+\section{恢复路线}
+小波路线对 DWT 的最细节系数使用 MAD 估计噪声标准差，阈值为
+\begin{equation}
+\lambda=\hat{\sigma}\sqrt{2\ln N},
+\end{equation}
+分别采用 soft 和 hard threshold 后逆变换。阈值仅由输入观测估计，参考干净波形只用于评分。该思想与小波收缩方法一致\supercite{donoho1994}。
+
+\begin{samepage}
+频谱增强采用基于噪声观测的 PSD-Wiener 方法。接收前噪声段使用与含噪帧相同的 Hann 窗、帧移和 STFT 归一化，跨帧平均 $|Z_n(k,m)|^2$ 得到噪声功率谱估计 $\hat P_n(k)$，\mbox{据此}计算短时频谱增益：
+\begin{equation}
+G(k,m)=\max\left(G_{\min},1-\frac{\hat P_n(k)}{|X(k,m)|^2}\right)
+\end{equation}
+
+其中 $G_{\min}$ 为增益下限。对处理后的短时频谱进行逆 STFT，得到重构信号。
+\end{samepage}
+
+跨窗平均周期图与 Welch 功率谱估计共享分段平均思想\supercite{welch1967}，而本实现直接平均复 STFT 功率以保持增益计算与系数的谱尺度一致；经典谱抑制和短时估计为噪声增强提供了相关背景\supercite{boll1979,ephraim1984}。互相关同步使用公开前导码，匹配滤波的检测含义参见\supercite{turin1960}。
+
+\noindent\begin{minipage}{\linewidth}
+\setlength{\parindent}{2em}
+FFT 单边幅度归一化的关键代码如下。其中 \texttt{w} 为窗函数数组，\texttt{coherent\_sum} 为其元素之和；偶数 FFT 长度保留 DC 和 Nyquist 两项的原始幅度。
+\inputminted[bgcolor=codebg,firstline=70,lastline=75,firstnumber=70]{python}{../../shared/signal_core.py}
+\end{minipage}
+
+\section{实验结果}
+独立评价使用 $-5,0,5,10$ dB 四个目标 SNR、5 个测试随机种子和 5 类噪声组合，共 680 条方法记录。所有方法使用同一条含噪输入；输入 SNR 和输出 SNR 均在与干净参考序列等长、同延迟的波形上计算。另以仿真真实帧起点计算诊断 BER，用于区分同步错误与载荷判决错误。评价指标定义为
+\begin{equation}
+\begin{aligned}
+\mathrm{SNR}_{\mathrm{in}} &= 10\log_{10}\frac{\sum_n s^2[n]}{\sum_n(r[n]-s[n])^2}, &
+\mathrm{SNR}_{\mathrm{out}} &= 10\log_{10}\frac{\sum_n s^2[n]}{\sum_n(\hat{s}[n]-s[n])^2},\\
+\mathrm{MSE} &= \frac{1}{N}\sum_n(\hat{s}[n]-s[n])^2, &
+\mathrm{BER} &= \frac{1}{N_b}\sum_{i=1}^{N_b}\mathbf{1}\{b_i\ne\hat{b}_i\},\\
+e_{\mathrm{sync}} &= \hat{m}-m_0.
+\end{aligned}
+\end{equation}
+表~\ref{tab:n12} 是 $N1+N2$、0 dB 目标条件下五个独立测试种子的均值；本组实测输入 SNR 均值为 0.00 dB。已知频率陷波使用模拟器指定的 1777 Hz，自动陷波则只从接收前噪声观测段估计候选峰值。
+
+{\setlength{\tabcolsep}{6pt}\tab{\begin{tabular}{lrrrrr}
+\toprule
+方法 & \shortstack{输出\\SNR/dB} & \shortstack{相关同步\\BER} & \shortstack{已知起点\\BER} & \shortstack{CRC\\成功率} & \shortstack{同步误差\\/点} \\
+\midrule
+未处理 & 0.00 & 0.0526 & 0.0526 & 0.00 & 0.0 \\
+带通滤波 & 2.86 & 0.0496 & 0.0496 & 0.00 & 0.0 \\
+小波软阈值 & 0.58 & 0.4701 & 0.3637 & 0.00 & 10732.8 \\
+PSD-Wiener & 5.69 & 0.0074 & 0.0074 & 0.00 & 0.0 \\
+固定频率陷波+带通 & 7.17 & 0.0018 & 0.0018 & 0.20 & 0.0 \\
+自动估频陷波+带通 & 7.17 & 0.0018 & 0.0018 & 0.20 & 0.0 \\
+固定频率组合处理 & 7.21 & 0.0027 & 0.0027 & 0.00 & 0.0 \\
+\bottomrule
+\end{tabular}}{N1+N2、0 dB 条件下的平均指标}{tab:n12}}
+
+各方法的均方误差与运行时间保存在实验 CSV 中。
+
+单帧的 PSD-Wiener 输出 SNR 为 5.69 dB、BER 为 0.0074。自动估频从噪声观测段检测出的干扰中心频率中位数为 1777.06 Hz；在 80 个含 N2 的独立评价样本中，估计值均位于真实频率 5 Hz 内，自动陷波结果与已知频率参考接近。该对照显示，在当前观测时长和信噪条件下，自动谱峰检测可以恢复有效陷波频率。
+
+小波软阈值的相关同步 BER 为 0.4701，平均同步误差为 10732.8 点，平均前导码判决错误为 12.4 bit。将真实帧起点提供给解调器后，BER 降至 0.3637，表明同步失败解释了部分恶化；已知起点下仍有较高误码，说明小波处理也改变了 FSK 符号的能量判决统计量。波形 SNR 从 0 dB 提高至 0.58 dB 并未带来可靠通信恢复。
+
+\fig{../../task2/figures/snr_sweep_N1_N2.pdf}{0.96}{N1+N2 条件的 SNR 扫描}
+\fig{../../task2/figures/ber_sweep_N1_N2.pdf}{0.96}{N1+N2 条件的有效载荷 BER}
+\fig{../../task2/figures/wavelet_sync_comparison.pdf}{0.96}{小波处理的同步与已知起点 BER}
+\fig{../../task2/figures/method_snr_N1_N2.pdf}{0.96}{代表性方法的输出 SNR}
+
+\subsection{重复接收与相关对齐}
+重复接收实验分别报告单次输入 SNR、理想对齐平均 SNR 和实际处理 SNR。独立噪声条件下单帧 SNR 为 $-2.07$ dB，互相关估计的延迟在本次数据中全部正确，相关对齐平均与理想对齐参考相同：$M=4$ 为 3.85 dB，$M=16$ 为 9.80 dB，相对单帧提高 11.87 dB，接近理论值 $10\log_{10}(16)=12.04$ dB。对齐平均后的重新同步 BER 降至 0；以已知起点 0 解调得到的 BER 和 CRC 结果另列于重复接收 CSV，用来单独观察波形平均效果。图中的“未对齐直接平均”按数组下标相加，SNR 同时包含噪声和帧起点不同造成的波形错位误差；$M=1$ 时的 SNR 下降来自前置延迟造成的波形错位。共享窄带干扰条件下重复平均增益为 0 dB。独立随机噪声叠加共同窄带干扰时，单帧 SNR 为 $-2.02$ dB，$M=16$ 输出为 1.88 dB，增益 3.90 dB，BER 为 0.0195。共同干扰保留在平均信号中。
+
+\fig{../../task2/figures/repeat_noise_structure.pdf}{0.80}{不同跨帧噪声结构下的相干平均}
+\fig{../../task2/figures/correlation_sync.pdf}{0.72}{含噪帧的前导码互相关}
+
+\section{讨论与结论}
+时域便于观察幅度包络和定位突发干扰；FFT 显示频率成分但不保留其出现时刻；STFT 与 CWT 分别以固定窗和多尺度方式呈现局部频率变化。自相关揭示周期性，互相关用于前导码定位和帧对齐。
+
+双音结果显示，补零提高频谱采样密度，但相近频率的分辨能力仍由观测时长和窗函数决定；STFT 短窗强化时间定位，长窗有利于区分相近频率。
+
+在 N1+N2、0 dB 条件下，自动陷波与已知频率陷波均达到 7.17 dB 输出 SNR，PSD-Wiener 为 5.69 dB。小波输出为 0.58 dB；已知帧起点后 BER 仍为 0.3637，表明载荷判决也受影响。重复接收平均可削弱独立噪声，共同窄带干扰则保留。
+
+\clearpage
+\printbibliography[heading=bibintoc,title={参考文献}]
+\end{document}

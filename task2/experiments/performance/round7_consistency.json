@@ -1,0 +1,9 @@
+{
+  "communication_csv_unchanged": {
+    "experiments/evaluation/seed_sweep.csv": "f53e3a41fe65099dd42a672c49338efc5498bdcbd43450c0784b59dfcb032854",
+    "experiments/repeat_average/repeat_average_metrics.csv": "85b3dcf6f6333edd2b871bdd371ed401b4ff59e8f2f04a0a51d2d6ff54afa085",
+    "experiments/representative/single_frame_metrics.csv": "7339cfdef6ab024b159e3679a902d8649e4652a933d1c7a8ca833d829a61e5fb"
+  },
+  "presentation_slide_xml_unchanged": 14,
+  "topic2_independent": true
+}

@@ -1,0 +1,421 @@
+{
+  "passed": true,
+  "device_pixel_ratio": 1.25,
+  "cases": [
+    {
+      "rate": 16000,
+      "size": [
+        900,
+        640
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 142.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": null
+      },
+      "visible_main_height": 144,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 16000,
+      "size": [
+        900,
+        640
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 181.0,
+        "fft": 174.0,
+        "comparison": 136.0,
+        "overview": null
+      },
+      "visible_main_height": 183,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 16000,
+      "size": [
+        1366,
+        768
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 142.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": null
+      },
+      "visible_main_height": 144,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 16000,
+      "size": [
+        1366,
+        768
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 181.0,
+        "fft": 174.0,
+        "comparison": 136.0,
+        "overview": null
+      },
+      "visible_main_height": 183,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 16000,
+      "size": [
+        1440,
+        900
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 133.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": 95.0
+      },
+      "visible_main_height": 135,
+      "visible_fft_height": 176,
+      "overview_expanded": true,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 16000,
+      "size": [
+        1440,
+        900
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 178.0,
+        "fft": 174.0,
+        "comparison": 133.0,
+        "overview": 95.0
+      },
+      "visible_main_height": 180,
+      "visible_fft_height": 176,
+      "overview_expanded": true,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 44100,
+      "size": [
+        900,
+        640
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 142.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": null
+      },
+      "visible_main_height": 144,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 44100,
+      "size": [
+        900,
+        640
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 181.0,
+        "fft": 174.0,
+        "comparison": 136.0,
+        "overview": null
+      },
+      "visible_main_height": 183,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 44100,
+      "size": [
+        1366,
+        768
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 142.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": null
+      },
+      "visible_main_height": 144,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 44100,
+      "size": [
+        1366,
+        768
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 181.0,
+        "fft": 174.0,
+        "comparison": 136.0,
+        "overview": null
+      },
+      "visible_main_height": 183,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 44100,
+      "size": [
+        1440,
+        900
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 133.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": 95.0
+      },
+      "visible_main_height": 135,
+      "visible_fft_height": 176,
+      "overview_expanded": true,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 44100,
+      "size": [
+        1440,
+        900
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 178.0,
+        "fft": 174.0,
+        "comparison": 133.0,
+        "overview": 95.0
+      },
+      "visible_main_height": 180,
+      "visible_fft_height": 176,
+      "overview_expanded": true,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 48000,
+      "size": [
+        900,
+        640
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 142.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": null
+      },
+      "visible_main_height": 144,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 48000,
+      "size": [
+        900,
+        640
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 181.0,
+        "fft": 174.0,
+        "comparison": 136.0,
+        "overview": null
+      },
+      "visible_main_height": 183,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 48000,
+      "size": [
+        1366,
+        768
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 142.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": null
+      },
+      "visible_main_height": 144,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 48000,
+      "size": [
+        1366,
+        768
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 181.0,
+        "fft": 174.0,
+        "comparison": 136.0,
+        "overview": null
+      },
+      "visible_main_height": 183,
+      "visible_fft_height": 176,
+      "overview_expanded": false,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 48000,
+      "size": [
+        1440,
+        900
+      ],
+      "split_tracks": false,
+      "canvas_heights": {
+        "main": 133.0,
+        "fft": 174.0,
+        "comparison": null,
+        "overview": 95.0
+      },
+      "visible_main_height": 135,
+      "visible_fft_height": 176,
+      "overview_expanded": true,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    },
+    {
+      "rate": 48000,
+      "size": [
+        1440,
+        900
+      ],
+      "split_tracks": true,
+      "canvas_heights": {
+        "main": 178.0,
+        "fft": 174.0,
+        "comparison": 133.0,
+        "overview": 95.0
+      },
+      "visible_main_height": 180,
+      "visible_fft_height": 176,
+      "overview_expanded": true,
+      "offsets_s": [
+        -0.1,
+        0,
+        0.1
+      ],
+      "technical_parameters_complete": true
+    }
+  ],
+  "main_signal_playback_verified": true
+}

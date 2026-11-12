@@ -1,0 +1,277 @@
+{
+  "pytest": {
+    "passed": 82,
+    "elapsed_s": 48.87,
+    "environment": "root .venv, reorganized task1/task2/shared suites"
+  },
+  "compileall": true,
+  "pip_check": false,
+  "native_gui_sample_rates_hz": [
+    16000,
+    44100,
+    48000
+  ],
+  "dpi_scales_verified": [
+    1,
+    1.25,
+    2
+  ],
+  "audio_comparison_cases": 54,
+  "window_sizes_verified": [
+    [
+      900,
+      640
+    ],
+    [
+      1366,
+      768
+    ],
+    [
+      1440,
+      900
+    ]
+  ],
+  "minimum_required_canvas_height_logical_px": {
+    "waveform": 120,
+    "fft": 150
+  },
+  "portable_verification": {
+    "passed": true,
+    "frozen": true,
+    "local_mouse_selection": true,
+    "pan": true,
+    "zoom": true,
+    "fixed_overview": true,
+    "selected_samples": [
+      4096,
+      7168
+    ],
+    "analyzed_views": [
+      "fft",
+      "stft",
+      "cwt",
+      "correlation"
+    ],
+    "playback_state_playing": true,
+    "wav_export": true,
+    "png_export": true,
+    "live_playback_cursor_seconds": 0.32,
+    "stop_retains_cursor": true,
+    "playback_does_not_reanalyze": true,
+    "consecutive_selection_reloads_media": true,
+    "distinct_selection_navigation_colors": true,
+    "fft_manual_zoom_preserved": true,
+    "fft_fit_control": true,
+    "clear_selection_follows_visible_range": true,
+    "explicit_comparison_file": true,
+    "comparison_resampling": true,
+    "comparison_split_tracks": true,
+    "comparison_fft": true,
+    "playback_and_export_use_main_signal": true,
+    "svg_vector_paths_without_embedded_image": true
+  },
+  "artifact_verification": {
+    "report_pages": 11,
+    "slide_pages": 14,
+    "native_math_zones": [
+      {
+        "slide": 4,
+        "name": "Math_fft",
+        "math_zones": 1
+      },
+      {
+        "slide": 4,
+        "name": "Math_stft",
+        "math_zones": 1
+      },
+      {
+        "slide": 4,
+        "name": "Math_cwt",
+        "math_zones": 1
+      },
+      {
+        "slide": 5,
+        "name": "Math_autocorr",
+        "math_zones": 1
+      },
+      {
+        "slide": 5,
+        "name": "Math_crosscorr",
+        "math_zones": 1
+      },
+      {
+        "slide": 6,
+        "name": "Math_fsk_phase",
+        "math_zones": 1
+      },
+      {
+        "slide": 6,
+        "name": "Math_params",
+        "math_zones": 1
+      },
+      {
+        "slide": 8,
+        "name": "Math_threshold",
+        "math_zones": 1
+      },
+      {
+        "slide": 10,
+        "name": "Math_snr",
+        "math_zones": 1
+      },
+      {
+        "slide": 10,
+        "name": "Math_ber",
+        "math_zones": 1
+      },
+      {
+        "slide": 11,
+        "name": "Math_average",
+        "math_zones": 1
+      }
+    ],
+    "chart_projected_font_sizes": [
+      {
+        "slide": 1,
+        "figure": "noise_waveforms_presentation.png",
+        "minimum_projected_font_pt": 14.0
+      },
+      {
+        "slide": 3,
+        "figure": "window_resolution_presentation.png",
+        "minimum_projected_font_pt": 14.0
+      },
+      {
+        "slide": 5,
+        "figure": "correlation_sync_presentation.png",
+        "minimum_projected_font_pt": 14.0
+      },
+      {
+        "slide": 7,
+        "figure": "time_frequency_clean_noisy_presentation.png",
+        "minimum_projected_font_pt": 17.0
+      },
+      {
+        "slide": 8,
+        "figure": "method_snr_N1_N2_presentation.png",
+        "minimum_projected_font_pt": 16.0
+      },
+      {
+        "slide": 10,
+        "figure": "snr_sweep_N1_N2_presentation.png",
+        "minimum_projected_font_pt": 14.0
+      },
+      {
+        "slide": 10,
+        "figure": "wavelet_sync_comparison_presentation.png",
+        "minimum_projected_font_pt": 14.12
+      },
+      {
+        "slide": 11,
+        "figure": "repeat_noise_structure_presentation.png",
+        "minimum_projected_font_pt": 14.0
+      },
+      {
+        "slide": 12,
+        "figure": "correlation_sync_compact_presentation.png",
+        "minimum_projected_font_pt": 14.0
+      }
+    ],
+    "average_formula_denominator_M_only": true,
+    "minimum_explicit_text_pt": 14.0,
+    "facts_in_compiled_pdf": true,
+    "sha256": {
+      "documents/report/topic2_report.tex": "3fd2de52099b2863165cf78d556ddf230158ecbc73af82cf16a28f5d17d78bda",
+      "documents/report/topic2_report.pdf": "0b2725a07e397ae378a2f479272af3bcf64f016f5b5df7ba0f4202d7e9c4616d",
+      "documents/presentation/build_presentation.py": "2a12e2fa10006b05a57ecf2f3059a43a8a3f22cb0c0407b061c67939b5654ce5",
+      "documents/presentation/topic2_presentation.pptx": "722cef1b55648837b219e90718ec0cffd908b0d5dc83537f6885e4531e51f22e",
+      "documents/presentation/topic2_presentation.pdf": "10c5f90f598c7b9027c143903341cd243c13637ed0f1ab302a6063086ce29a40"
+    },
+    "report_layout_verification": {
+      "record": "report_layout_verification.json",
+      "verified_at_local": "2026-11-11T22:40:33",
+      "visual_review_all_report_pages": true,
+      "vector_chart_legends_outside_plot": true,
+      "gui_figures_enlarged": true,
+      "gui_figure_references_resolved": true,
+      "presentation_sha256_unchanged": false,
+      "pptx_structure_rechecked": {
+        "slides": 14,
+        "native_omml_equations": 11
+      },
+      "gui_paragraph_kept_on_page_4": true,
+      "psd_formula_preceding_sentence_corrected": true,
+      "waveform_legend_and_time_label_verified": true,
+      "sample_rate_word_kept_together_on_page_4": true
+    },
+    "directory_organization_verification": "directory_organization_verification.json"
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "PyWavelets": "1.10.0",
+    "PySide6": "6.11.1",
+    "pyqtgraph": "0.14.0",
+    "soundfile": "0.14.0",
+    "pytest": "8.4.2"
+  },
+  "preserved_algorithm_data_figure_files": 72,
+  "portable_archive_size_mib": 121.08,
+  "sha256": {
+    "task1/analyzer/app.py": "3c7e8620413e063806b305f2ff4c69ac8c0959fb6df74da7523f46fe01db3a9f",
+    "task1/analyzer/verification.py": "1dcf4bb209693942c88769db9f285f64959fac65e40ede449b31a46fa86ef13a",
+    "task1/tests/test_audio_comparison.py": "9617035b355dedd0c56af8534fa69a6618125c69150ed943af347c90acc39bc8",
+    "documents/report/topic2_report.tex": "3fd2de52099b2863165cf78d556ddf230158ecbc73af82cf16a28f5d17d78bda",
+    "documents/report/topic2_report.pdf": "0b2725a07e397ae378a2f479272af3bcf64f016f5b5df7ba0f4202d7e9c4616d",
+    "documents/presentation/build_presentation.py": "2a12e2fa10006b05a57ecf2f3059a43a8a3f22cb0c0407b061c67939b5654ce5",
+    "documents/presentation/topic2_presentation.pptx": "722cef1b55648837b219e90718ec0cffd908b0d5dc83537f6885e4531e51f22e",
+    "documents/presentation/topic2_presentation.pdf": "10c5f90f598c7b9027c143903341cd243c13637ed0f1ab302a6063086ce29a40",
+    "task1/release/SignalScope-portable-win-x64.zip": "d20740774fef21b66509da81b3d325389da6971b107bc027ccc5b7c332ec7471",
+    "documents/report/images/gui_overview.png": "ea5da5ff02058e8550787c0861c302a9425f02fdb562ff09c8848d93b6eeab07",
+    "documents/report/images/gui_cwt_core.png": "ffc9f02a4b689137f1eadc78906bc19bc61f221316110b8aa5540daee97d9745",
+    "documents/report/images/gui_correlation_core.png": "441e76fd2bd3daad481f7c76f4b8284294af744ebd4ebf33555cda5e3ed880b4",
+    "task2/communication_experiment/runner.py": "d7317662f3b421b92d1f802641d0ba7f0b445ed6a628562f66c2959b3b5d47fe",
+    "documents/scripts/build_report_assets.py": "31aa5b239a751a31ee8d71a0cc3f2196610de48c9c7b055ddd28f01f8f7c4548",
+    "documents/scripts/build_review_bundle.ps1": "940b8bf03c8696e8405e523c12fc79b4f4128d24abd2609efaacb33f7530600e",
+    "task2/figures/snr_sweep_N1_N2.pdf": "a5490009abcec8c7bf72fa0722485a63613cf50fa9ee3cc73cc766f8d707ccc8",
+    "task2/figures/ber_sweep_N1_N2.pdf": "ad368ef97de135a0c928946c9859ae1bdc71aaeb4de8df7eac32988474a8cc7c",
+    "task2/figures/wavelet_sync_comparison.pdf": "4c48db60f2b2cb768cf791c2d23d0658e51cc500121e4779af9fbc93c567725d",
+    "task2/figures/noise_waveforms.png": "a5aa145add27a79f49a8f0273849ac9c7f30a4f261b9f3a1cf9399485bfd3e9a",
+    "task2/figures/noise_waveforms.pdf": "9e2ab225d5af6e51e5331723deb2f7ba729bc815b1c850042a4c895e6ad8bf8d",
+    ".gitignore": "04b815d4ac936d8ad518df624d67d389282c0d8361c3df06c7ee88e6576e18ec",
+    "README.md": "d8ea9173bbe310188043462345acfb26fbc0e7b26b1927b295cffded8bf5ca9c",
+    "conftest.py": "42bd0ff310a3445d5017035da5e515aa606a390d564a22cf8959190072646346",
+    "task1/SignalScope.spec": "fae128fe4241ad121de8cd312e773765cd667565487a3bc6b901a3a7961e6e9a",
+    "task1/requirements-pack.txt": "6368057417cfdd3e9d4441ca05784a86cdd4cdc7140f0a83a635dbd0d24be00e",
+    "task1/scripts/build_portable.ps1": "7f20ca11b0a94260152835fead4ce6f4ee1a0468463812b4567a6a91396e46fa",
+    "task1/scripts/run_analyzer.ps1": "5746b890859c9da9dc59b7b4deb8f0a3b13caca5f9ff5d18a55767205a269a14",
+    "task2/scripts/run_experiment.ps1": "ad5d6d7f5f90c4fc5726e46a4e4db5de3502ee6e2eda1ecc8ffa807075c47c91",
+    "task2/figures/correlation_sync.pdf": "966193a550d0a9a503acfd5e2260e9fa73ff8a448ffb494c181f432958076918",
+    "task2/figures/correlation_sync.png": "1afb9001a3ab2645abb8d5a1dbd551ad71420db9ca66f24eddde0e9a8281d79d",
+    "task2/figures/correlation_sync_compact_presentation.pdf": "216853b2343a1d6d2a9807507a7be2cc1de95f147d1da0921df2156f24ea610c",
+    "task2/figures/correlation_sync_compact_presentation.png": "ea411c6b92546e27b43e058e4ab9f4b58081e321accb9395583372bdcc1a9d6c",
+    "task2/figures/correlation_sync_presentation.pdf": "9d80e7a696e738c73c0d0bbcf8156a8d6dd0fc2922682c795f036c018e88a0b2",
+    "task2/figures/correlation_sync_presentation.png": "5446d6201ff2ce9490268a1a80807a999acd4790b432ec293f114c4b11e64fb2",
+    "task2/figures/time_frequency_clean_noisy.pdf": "6432ab5cd173812c655e58a1f6cddf1122292c555449ec531157e49b2702b851",
+    "task2/figures/time_frequency_clean_noisy.png": "403bd7c6dcaa816fa733598d0040a37c41a081ef8c875433a27ae5b5770f4e85",
+    "task2/figures/time_frequency_clean_noisy_presentation.pdf": "aae30b63761351c04d5b1bfbf45c471357e4c22d383456c98ac5ea707afe3e3f",
+    "task2/figures/time_frequency_clean_noisy_presentation.png": "403bd7c6dcaa816fa733598d0040a37c41a081ef8c875433a27ae5b5770f4e85"
+  },
+  "local_windows_verified": true,
+  "second_clean_machine_tested": false,
+  "report_layout_update": {
+    "verified_at_local": "2026-11-11T22:40:33",
+    "record": "task2/experiments/performance/report_layout_verification.json",
+    "report_pages": 11,
+    "syntax_files_parsed": 23,
+    "communication_experiments_rerun": false,
+    "full_pytest_rerun": true,
+    "portable_rebuilt": true,
+    "previous_pytest_and_portable_results_retained": true,
+    "line_break_fixes_verified": true,
+    "noise_waveform_legend_and_axis_label_verified": true,
+    "sample_rate_word_kept_together_on_page_4": true
+  },
+  "pip_check_context": "The system-site environment contains unrelated global packages; all project requirements are installed and 82 project tests pass.",
+  "directory_organization_verification": "task2/experiments/performance/directory_organization_verification.json"
+}

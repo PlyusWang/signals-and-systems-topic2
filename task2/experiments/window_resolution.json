@@ -1,0 +1,26 @@
+{
+  "sample_rate_hz": 16000,
+  "tone_frequencies_hz": [
+    1000,
+    1080
+  ],
+  "frequency_separation_hz": 80,
+  "fft_observation_samples": [
+    256,
+    1024,
+    4096
+  ],
+  "stft_window_samples": [
+    256,
+    2048
+  ],
+  "stft_hann_main_lobe_width_hz": [
+    250.0,
+    31.25
+  ],
+  "fft_nfft_samples": 4096,
+  "cwt_frequency_limits_hz": [
+    850,
+    1250
+  ]
+}

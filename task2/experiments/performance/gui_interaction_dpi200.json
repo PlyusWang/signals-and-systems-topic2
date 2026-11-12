@@ -1,0 +1,43 @@
+{
+  "device_pixel_ratio": 2.0,
+  "passed": true,
+  "stft": [
+    {
+      "duration_ms": 20,
+      "window_length": 80,
+      "overlap_samples": 70,
+      "fft_length": 512,
+      "hop_samples": 10,
+      "requested_window": 512,
+      "requested_fft": 512
+    },
+    {
+      "duration_ms": 40,
+      "window_length": 160,
+      "overlap_samples": 140,
+      "fft_length": 512,
+      "hop_samples": 20,
+      "requested_window": 512,
+      "requested_fft": 512
+    },
+    {
+      "duration_ms": 100,
+      "window_length": 400,
+      "overlap_samples": 350,
+      "fft_length": 512,
+      "hop_samples": 50,
+      "requested_window": 512,
+      "requested_fft": 512
+    },
+    {
+      "duration_ms": 500,
+      "window_length": 512,
+      "overlap_samples": 448,
+      "fft_length": 512,
+      "hop_samples": 64,
+      "requested_window": 512,
+      "requested_fft": 512
+    }
+  ],
+  "cwt_switch": []
+}

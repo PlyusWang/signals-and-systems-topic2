@@ -1,0 +1,72 @@
+# Python environments and caches
+.venv*/
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.py[cod]
+/.pytest-*/
+
+# Local session and verification files
+/.codex/
+
+# Build directories and generated release packages
+build/
+dist/
+release/
+*review_bundle*.zip
+*review-bundle*.zip
+/task2/audio/long_cwt_smoke.wav
+
+# LaTeX, Biber and minted intermediates
+*.log
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.out
+*.toc
+*.lof
+*.lot
+*.xdv
+*.synctex.gz
+*.run.xml
+*.pyg
+*.pygstyle
+*.pygtex
+*.minted
+_minted/
+_minted-*/
+
+# Report/slide inspection renders; source images live in images/ and figures/
+/documents/report/*.png
+/documents/report/*.jpg
+/documents/report/*.jpeg
+/documents/report/topic2_report_extracted.txt
+/documents/presentation/*.png
+/documents/presentation/*.jpg
+/documents/presentation/*.jpeg
+/documents/presentation/topic2_presentation_check*.pdf
+/task1/screenshots/gui_smoke*.png
+/task1/screenshots/gui_final_*.png
+/task1/screenshots/gui_cwt_long_check.png
+/task1/screenshots/gui_cwt_refresh.png
+/task1/screenshots/packaged*.png
+
+# Keep only screenshots referenced by the document sources/generator
+/task1/screenshots/*
+!/task1/screenshots/gui_zh_fft.png
+!/task1/screenshots/gui_zh_stft.png
+!/task1/screenshots/gui_zh_cwt.png
+!/task1/screenshots/gui_zh_corr.png
+
+# Editor and temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+~$*

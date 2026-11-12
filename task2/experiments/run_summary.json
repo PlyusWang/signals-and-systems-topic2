@@ -1,0 +1,8 @@
+{
+  "elapsed_seconds": 25.87348569999449,
+  "single_rows": 72,
+  "repeat_rows": 78,
+  "sweep_rows": 680,
+  "evaluation_seeds": 5,
+  "runtime_environment": "Python; benchmark values are measured by runner"
+}

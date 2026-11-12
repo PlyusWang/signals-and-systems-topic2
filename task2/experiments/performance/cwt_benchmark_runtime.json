@@ -1,0 +1,27 @@
+{
+  "cwt": [
+    {
+      "duration_s": 60,
+      "sample_rate_hz": 16000,
+      "elapsed_s": 22.022,
+      "peak_rss_mib": 402.9,
+      "peak_increment_mib": 297.6,
+      "frequency_rows": 109,
+      "time_columns": 12000,
+      "frequency_max_hz": 7680.0,
+      "finite_output": true
+    },
+    {
+      "duration_s": 180,
+      "sample_rate_hz": 16000,
+      "elapsed_s": 64.094,
+      "peak_rss_mib": 419.0,
+      "peak_increment_mib": 295.7,
+      "frequency_rows": 109,
+      "time_columns": 12000,
+      "frequency_max_hz": 7680.0,
+      "finite_output": true
+    }
+  ],
+  "gui_switch": []
+}

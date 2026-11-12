@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "frozen": true,
+  "local_mouse_selection": true,
+  "pan": true,
+  "zoom": true,
+  "fixed_overview": true,
+  "selected_samples": [
+    4096,
+    7168
+  ],
+  "analyzed_views": [
+    "fft",
+    "stft",
+    "cwt",
+    "correlation"
+  ],
+  "playback_state_playing": true,
+  "wav_export": true,
+  "png_export": true,
+  "live_playback_cursor_seconds": 0.32,
+  "stop_retains_cursor": true,
+  "playback_does_not_reanalyze": true,
+  "consecutive_selection_reloads_media": true,
+  "distinct_selection_navigation_colors": true,
+  "fft_manual_zoom_preserved": true,
+  "fft_fit_control": true,
+  "clear_selection_follows_visible_range": true,
+  "explicit_comparison_file": true,
+  "comparison_resampling": true,
+  "comparison_split_tracks": true,
+  "comparison_fft": true,
+  "playback_and_export_use_main_signal": true,
+  "svg_vector_paths_without_embedded_image": true
+}

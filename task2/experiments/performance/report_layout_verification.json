@@ -1,0 +1,152 @@
+{
+  "scope": "Compact title block, matched local waveforms, native SNR equation, correlation legend and task directory organization",
+  "report_pages": 11,
+  "a4_all_pages": true,
+  "syntax_files_parsed": 23,
+  "preserved_files_unchanged": 77,
+  "changed_function_only": "communication_experiment.runner._save_plot",
+  "algorithms_data_gui_presentation_portable_preserved": false,
+  "experiment_rerun": false,
+  "full_pytest_rerun": false,
+  "portable_rebuilt": false,
+  "vector_charts": [
+    {
+      "file": "figures/snr_sweep_N1_N2.pdf",
+      "vector_paths": 73,
+      "raster_images": 0,
+      "has_text": true
+    },
+    {
+      "file": "figures/ber_sweep_N1_N2.pdf",
+      "vector_paths": 75,
+      "raster_images": 0,
+      "has_text": true
+    },
+    {
+      "file": "figures/wavelet_sync_comparison.pdf",
+      "vector_paths": 54,
+      "raster_images": 0,
+      "has_text": true
+    }
+  ],
+  "resolved_gui_figure_labels": {
+    "fig:gui-overview": 2,
+    "fig:gui-cwt": 3,
+    "fig:gui-correlation": 4
+  },
+  "latex_overfull_boxes": 0,
+  "latex_undefined_references": 0,
+  "presentation_slides_unchanged": 14,
+  "office_native_equations_unchanged": 11,
+  "sha256": {
+    "documents/report/topic2_report.tex": "3fd2de52099b2863165cf78d556ddf230158ecbc73af82cf16a28f5d17d78bda",
+    "documents/report/topic2_report.pdf": "0b2725a07e397ae378a2f479272af3bcf64f016f5b5df7ba0f4202d7e9c4616d",
+    "documents/report/images/gui_overview.png": "ea5da5ff02058e8550787c0861c302a9425f02fdb562ff09c8848d93b6eeab07",
+    "documents/report/images/gui_cwt_core.png": "ffc9f02a4b689137f1eadc78906bc19bc61f221316110b8aa5540daee97d9745",
+    "documents/report/images/gui_correlation_core.png": "441e76fd2bd3daad481f7c76f4b8284294af744ebd4ebf33555cda5e3ed880b4",
+    "task2/communication_experiment/runner.py": "d7317662f3b421b92d1f802641d0ba7f0b445ed6a628562f66c2959b3b5d47fe",
+    "documents/scripts/build_report_assets.py": "31aa5b239a751a31ee8d71a0cc3f2196610de48c9c7b055ddd28f01f8f7c4548",
+    "documents/scripts/build_review_bundle.ps1": "940b8bf03c8696e8405e523c12fc79b4f4128d24abd2609efaacb33f7530600e",
+    "task2/figures/snr_sweep_N1_N2.pdf": "a5490009abcec8c7bf72fa0722485a63613cf50fa9ee3cc73cc766f8d707ccc8",
+    "task2/figures/ber_sweep_N1_N2.pdf": "ad368ef97de135a0c928946c9859ae1bdc71aaeb4de8df7eac32988474a8cc7c",
+    "task2/figures/wavelet_sync_comparison.pdf": "4c48db60f2b2cb768cf791c2d23d0658e51cc500121e4779af9fbc93c567725d",
+    "documents/presentation/build_presentation.py": "2a12e2fa10006b05a57ecf2f3059a43a8a3f22cb0c0407b061c67939b5654ce5",
+    "documents/presentation/topic2_presentation.pptx": "722cef1b55648837b219e90718ec0cffd908b0d5dc83537f6885e4531e51f22e",
+    "task2/figures/noise_waveforms.png": "a5aa145add27a79f49a8f0273849ac9c7f30a4f261b9f3a1cf9399485bfd3e9a",
+    "task2/figures/noise_waveforms.pdf": "9e2ab225d5af6e51e5331723deb2f7ba729bc815b1c850042a4c895e6ad8bf8d",
+    "documents/presentation/topic2_presentation.pdf": "10c5f90f598c7b9027c143903341cd243c13637ed0f1ab302a6063086ce29a40",
+    "task2/figures/correlation_sync.pdf": "966193a550d0a9a503acfd5e2260e9fa73ff8a448ffb494c181f432958076918",
+    "task2/figures/correlation_sync.png": "1afb9001a3ab2645abb8d5a1dbd551ad71420db9ca66f24eddde0e9a8281d79d",
+    "task2/figures/correlation_sync_compact_presentation.pdf": "216853b2343a1d6d2a9807507a7be2cc1de95f147d1da0921df2156f24ea610c",
+    "task2/figures/correlation_sync_compact_presentation.png": "ea411c6b92546e27b43e058e4ab9f4b58081e321accb9395583372bdcc1a9d6c",
+    "task2/figures/correlation_sync_presentation.pdf": "9d80e7a696e738c73c0d0bbcf8156a8d6dd0fc2922682c795f036c018e88a0b2",
+    "task2/figures/correlation_sync_presentation.png": "5446d6201ff2ce9490268a1a80807a999acd4790b432ec293f114c4b11e64fb2",
+    "task2/figures/time_frequency_clean_noisy.pdf": "6432ab5cd173812c655e58a1f6cddf1122292c555449ec531157e49b2702b851",
+    "task2/figures/time_frequency_clean_noisy.png": "403bd7c6dcaa816fa733598d0040a37c41a081ef8c875433a27ae5b5770f4e85",
+    "task2/figures/time_frequency_clean_noisy_presentation.pdf": "aae30b63761351c04d5b1bfbf45c471357e4c22d383456c98ac5ea707afe3e3f",
+    "task2/figures/time_frequency_clean_noisy_presentation.png": "403bd7c6dcaa816fa733598d0040a37c41a081ef8c875433a27ae5b5770f4e85"
+  },
+  "verified_at_local": "2026-11-11T22:40:33",
+  "compilation": "XeLaTeX + Biber + XeLaTeX passes; final XeLaTeX after screenshot regeneration",
+  "visual_review_all_report_pages": true,
+  "legends": [
+    {
+      "file": "snr_sweep_N1_N2.png",
+      "entries": 7,
+      "font_pt": 12.5,
+      "gap_above_plot_pt": 13.93,
+      "overlapping_labels": false,
+      "all_labels_inside_figure": true
+    },
+    {
+      "file": "ber_sweep_N1_N2.png",
+      "entries": 7,
+      "font_pt": 12.5,
+      "gap_above_plot_pt": 13.93,
+      "overlapping_labels": false,
+      "all_labels_inside_figure": true
+    },
+    {
+      "file": "wavelet_sync_comparison.png",
+      "entries": 4,
+      "font_pt": 12.5,
+      "gap_above_plot_pt": 13.93,
+      "overlapping_labels": false,
+      "all_labels_inside_figure": true
+    }
+  ],
+  "psd_formula_explanation_indentation_reviewed": true,
+  "gui_core_views_full_left_selection_right": true,
+  "line_break_and_waveform_update": {
+    "report_pages": 11,
+    "a4_all_pages": true,
+    "complete_gui_paragraph_page": 4,
+    "psd_sentence_fixed_page": 6,
+    "isolated_one_or_two_chinese_character_lines": [],
+    "latex_overfull_boxes": 0,
+    "undefined_references": 0,
+    "protected_files_checked": 351,
+    "intended_changed_files": [
+      "report/topic2_report.pdf",
+      "scripts/build_report_assets.py",
+      "figures/noise_waveforms.png",
+      "communication_experiment/runner.py",
+      "figures/noise_waveforms.pdf",
+      "report/topic2_report.tex"
+    ],
+    "compiled_with": "XeLaTeX + Biber + subsequent XeLaTeX passes",
+    "all_report_pages_visually_reviewed": true,
+    "waveform_figure": {
+      "file": "figures/noise_waveforms.pdf",
+      "legend_font_pt": 12.5,
+      "legend_gap_above_plot_pt": 14.04,
+      "time_label_bottom_margin_pt": 17.08,
+      "all_legend_and_axis_labels_inside_figure": true,
+      "noise_power_and_peak_match_saved_results_rtol": 1e-12,
+      "raster_images": 0,
+      "vector_paths": 34
+    },
+    "syntax_files_parsed": 23,
+    "experiment_algorithms_unchanged": true,
+    "experiments_rerun": false,
+    "gui_ppt_portable_unchanged": true,
+    "verified_at_local": "2026-11-11T21:25:56"
+  },
+  "sample_rate_word_nobreak_fix": {
+    "report_pages": 11,
+    "changed_rendered_pages": [
+      4
+    ],
+    "source_change": "Only the specified occurrence wrapped with \\mbox{采样率}",
+    "both_sample_rate_occurrences_unbroken_in_gui_paragraph": true,
+    "overfull_boxes": 0,
+    "undefined_references": 0,
+    "page_4_visually_checked": true,
+    "compiled_with": "XeLaTeX + Biber + XeLaTeX passes"
+  },
+  "experimental_algorithm_and_data_preserved": true,
+  "task_directory_organization": {
+    "record": "directory_organization_verification.json",
+    "verified_at_local": "2026-11-11T22:40:33"
+  }
+}
